@@ -1,0 +1,32 @@
+<div class="grid-container">
+    <div class="row">
+        <div class="type-item">
+            <div class="value">{{isDarkWeb? data.AttackIndication.DarkWeb: data.AttackIndication.ClearWeb}}</div>
+            <div class="type">ATTACK INDICATION</div>
+        </div>
+        <div class="type-item-right">
+            <div class="value">{{isDarkWeb? data.DataLeakage.DarkWeb: data.DataLeakage.ClearWeb}}</div>
+            <div class="type">DATA LEAKAGE</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="type-item">
+            <div class="value">{{isDarkWeb? data.Phishing.DarkWeb: data.Phishing.ClearWeb}}</div>
+            <div class="type">PHISHING</div>
+        </div>
+        <div class="type-item-right">
+            <div class="value">{{isDarkWeb? data.BrandSecurity.DarkWeb: data.BrandSecurity.ClearWeb}}</div>
+            <div class="type">BRAND SECURITY</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="type-item">
+            <div class="value">{{isDarkWeb? data.ExploitableData.DarkWeb: data.ExploitableData.ClearWeb}}</div>
+            <div class="type">EXPLOITABLE DATA&trade;</div>
+        </div>
+        <div class="type-item-right">
+            <div class="value">{{isDarkWeb? data.vip.DarkWeb: data.vip.ClearWeb}}</div>
+            <div class="type">VIP</div>
+        </div>
+    </div>
+</div>

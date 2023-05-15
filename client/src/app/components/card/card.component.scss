@@ -1,0 +1,33 @@
+@import "../../colors";
+@media only screen and (max-width:800px) {
+    .container {
+        width: 70vw;
+    }
+}
+
+:host {
+    display: block;
+
+    .container {
+        height: 279px;
+        background-color: $component-main-bg-color;
+
+        .header {
+            height: 37px;
+            display: flex;
+            align-items: center;
+            background-color: $component-secondary-bg-color;
+            padding-left: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 400;
+            font-size: 14px;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        .content {
+            height: 242px;
+        }
+    }
+}

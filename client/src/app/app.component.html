@@ -1,0 +1,38 @@
+<h1>
+  Welcome to IntSights challenge!
+</h1>
+
+<div *ngIf="intsights$ | async; let data" class="main-container">
+  <form [formGroup]="form">
+    <div class="form-group">
+      <select formControlName="source" class="form-control" (change)="changeSource($event)">
+        <option *ngFor="let source of sourcesListObject | keyvalue" [value]="source.key">{{source.value}}</option>
+      </select>
+    </div>
+  </form>  
+  <div class="risk-meter-title">System risk meter</div>
+  <risk-meter [percentage]="data?.riskMeter"></risk-meter>    
+  <div class="cards-container">
+    <div class="clearweb-cards">
+      <app-card [title]="'Clear web types' | uppercase">
+        <risk-types-table [isDarkWeb]="false" [data]="data?.filteredAggregations?.aggregationsByType"></risk-types-table>
+      </app-card>
+      <app-card [title]="'Clear web severities' | uppercase">
+        <doughnut-chart [data]="[data?.filteredAggregations?.aggregationsBySeverity?.High?.ClearWeb,
+                                 data?.filteredAggregations?.aggregationsBySeverity?.Medium?.ClearWeb, 
+                                 data?.filteredAggregations?.aggregationsBySeverity?.Low?.ClearWeb]"></doughnut-chart>
+      </app-card>
+    </div>
+    <div class="darkweb-cards">
+      <app-card [title]="'dark web types'">
+        <risk-types-table [isDarkWeb]="true" [data]="data.filteredAggregations?.aggregationsByType"></risk-types-table>
+      </app-card>
+      <app-card [title]="'dark web severities'">
+        <doughnut-chart [data]="[data?.filteredAggregations?.aggregationsBySeverity?.High?.DarkWeb,
+                                 data?.filteredAggregations?.aggregationsBySeverity?.Medium?.DarkWeb,
+                                 data?.filteredAggregations?.aggregationsBySeverity?.Low?.DarkWeb]"></doughnut-chart>
+      </app-card>
+    </div>
+  </div>
+</div>
+

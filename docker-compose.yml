@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  angular:
+    build: client # directory of the Dockerfile
+    ports:
+      - "4200:4200" 
+
+  express:
+    build: server # specify the directory of the Dockerfile
+    ports:
+      - "1337:1337" #specify ports forewarding
+    depends_on:
+      - mongo
+    environment: 
+      MONGODB_URI: mongodb://mongo:27017/insightdb
+
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - ./mongo/data:/data/db    
+    ports:
+      - "27017:27017"
+
+  populate:
+    build: server
+    volumes:
+      - ./server/src/populate.js:/usr/src/app/populate.js
+    command: ["node", "/usr/src/app/populate.js"]
+    depends_on: 
+      - mongo

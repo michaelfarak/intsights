@@ -1,0 +1,20 @@
+# WebStorm Folder
+.idea
+
+# Visual Studio Code Folder
+.vscode
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+**/node_modules/
+
+# API directories
+out
+
+#Config file
+src/config*.json
+package-lock.json
+
+#js dist files
+**/dist/
+**/*.min.js

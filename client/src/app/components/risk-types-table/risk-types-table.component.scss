@@ -1,0 +1,28 @@
+.grid-container {
+    height: 100%;
+    text-align: left;
+    .row {
+        display: flex;
+        border-top: 1px solid #223B50;
+        padding: 14px 10px 14px 10px;
+        height: 21.5%;
+        
+        .type-item, .type-item-right {
+            width: 50%;
+            .value {
+                font-size: 20px;
+                font-weight: 400;
+            }
+            .type {
+                font-size: 14px;
+            }
+        }
+
+        .type-item-right {
+            margin-left: 20%
+        }
+    }
+
+}
+
+

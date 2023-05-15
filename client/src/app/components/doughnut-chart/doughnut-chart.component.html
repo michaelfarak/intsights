@@ -1,0 +1,15 @@
+<div class="doughnut-container">
+  <canvas baseChart
+          [datasets]="dataSets"
+          [labels]="dataLabel"
+          [chartType]="doughnutChartType"
+          [options]="options"
+  >
+  </canvas>
+  <div class="doughnut-legend">
+    <div *ngFor="let item of dataLabel; index as i" class="legend-item-container">
+      <div class="severity">{{item | uppercase}}</div>
+      <div class="value">{{dataSets[0].data[i]}}</div>
+    </div>
+  </div>
+</div>

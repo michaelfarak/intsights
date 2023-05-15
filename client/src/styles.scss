@@ -1,0 +1,9 @@
+$text-color: #ffffff;
+$background-color: #235279;
+
+body {
+  background-color: $background-color;
+  margin: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: $text-color;
+}

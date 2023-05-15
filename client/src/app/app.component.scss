@@ -1,0 +1,75 @@
+@media only screen and (max-width:800px) {
+  .main-container {
+    .cards-container {
+      .clearweb-cards, .darkweb-cards {
+        display: block !important;
+      }
+    }
+    .form-control {
+      width: 125px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .main-container{
+    .risk-meter-title {
+      top: 190px !important;
+    }
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+risk-meter, doughnut-chart {
+  margin: 20px auto auto auto;
+  width: 300px;
+}
+
+app-card {
+  margin-top: 20px;
+  width: 49%;
+}
+
+
+risk-meter {
+  width: 100%;
+}
+
+.main-container {
+  margin: 50px auto auto auto;
+  width: 65vw;
+  text-align: center;
+
+  .cards-container {
+   .clearweb-cards, .darkweb-cards {
+    display: flex;
+    justify-content: space-between;
+   }
+  }
+
+  .form-control {
+    float: right;
+    width: 244px;
+    height: 40px;
+    background: #254A69;
+    display: flex;
+    color: white;
+    font-family: 'Open Sans';
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    border-color: #4B81A6;
+    margin-bottom: 16px;
+  }
+
+  .risk-meter-title {
+    position: absolute;
+    top: 145px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  
+}
